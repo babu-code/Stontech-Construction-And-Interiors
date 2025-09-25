@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stontech General Supplies & Construction Limited - Leading Construction Services in Kenya</title>
+    <meta name="description" content="Professional construction services and general supplies in Kenya. Get quality building materials, civil works, electrical & mechanical services. Request free quote today.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 58, 138, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f1f5f9" width="1200" height="800"/><g fill="%23e2e8f0"><circle cx="200" cy="150" r="80"/><circle cx="800" cy="200" r="60"/><circle cx="1000" cy="400" r="100"/><rect x="300" y="300" width="200" height="150" rx="10"/><rect x="600" y="500" width="150" height="100" rx="8"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+        }
+        
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .nav-link:hover {
+            color: #7c3aed;
+            transition: color 0.3s ease;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #7c3aed, #06b6d4);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #6d28d9, #0891b2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .page-content {
+            display: none;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        .nav-link.active {
+            color: #7c3aed;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-slate-800 cursor-pointer" onclick="showPage('home')">
+                            <span class="text-purple-600">Stontech</span> Construction
+                        </h1>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" onclick="showPage('home')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium active">Home</a>
+                        <a href="#" onclick="showPage('about')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#" onclick="showPage('services')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#" onclick="showPage('projects')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Projects</a>
+                        <a href="#" onclick="showPage('quote')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Get Quote</a>
+                        <a href="#" onclick="showPage('blog')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Blog</a>
+                        <a href="#" onclick="showPage('contact')" class="nav-link text-slate-700 hover:text-purple-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-emerald-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="showPage('home')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">Home</a>
+                <a href="#" onclick="showPage('about')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">About</a>
+                <a href="#" onclick="showPage('services')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">Services</a>
+                <a href="#" onclick="showPage('projects')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">Projects</a>
+                <a href="#" onclick="showPage('quote')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">Get Quote</a>
+                <a href="#" onclick="showPage('blog')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">Blog</a>
+                <a href="#" onclick="showPage('contact')" class="block px-3 py-2 text-slate-700 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home-page" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex items-center pt-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Building Excellence, <br>
+                        <span class="text-cyan-400">Delivering Trust</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                        Kenya's premier construction and general supplies company with over a decade of proven expertise in delivering quality projects on time and within budget.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <button onclick="showPage('quote')" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg">
+                            <i class="fas fa-calculator mr-2"></i>
+                            Request Free Quote
+                        </button>
+                        <button onclick="showPage('contact')" class="bg-white text-slate-800 px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:bg-gray-100 transition-all">
+                            <i class="fas fa-phone mr-2"></i>
+                            Contact Us Today
+                        </button>
+                        <button onclick="showPage('services')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-slate-800 transition-all">
+                            <i class="fas fa-tools mr-2"></i>
+                            View Our Services
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Services Overview -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Why Choose Stontech?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        We deliver exceptional construction solutions with unmatched quality and reliability.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-8">
+                        <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-award text-3xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">15+ Years Experience</h3>
+                        <p class="text-gray-600">Proven track record in delivering quality construction projects across Kenya with certified professionals.</p>
+                    </div>
+                    
+                    <div class="text-center p-8">
+                        <div class="bg-cyan-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-handshake text-3xl text-cyan-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">500+ Happy Clients</h3>
+                        <p class="text-gray-600">Building lasting relationships through transparent communication and exceptional service delivery.</p>
+                    </div>
+                    
+                    <div class="text-center p-8">
+                        <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-clock text-3xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">On-Time Delivery</h3>
+                        <p class="text-gray-600">98% of our projects completed on schedule with rigorous project management and quality control.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Services -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Our Core Services</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Comprehensive construction solutions from foundation to finish.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-purple-600 mb-6">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Building & Construction</h3>
+                        <p class="text-gray-600 mb-6">Complete building construction from residential to commercial projects.</p>
+                        <button onclick="showPage('services')" class="text-purple-600 font-semibold hover:text-purple-700">Learn More →</button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-cyan-600 mb-6">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">General Supplies</h3>
+                        <p class="text-gray-600 mb-6">Quality building materials and construction supplies delivered on time.</p>
+                        <button onclick="showPage('services')" class="text-purple-600 font-semibold hover:text-purple-700">Learn More →</button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-purple-600 mb-6">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Civil Works</h3>
+                        <p class="text-gray-600 mb-6">Infrastructure development including roads and drainage systems.</p>
+                        <button onclick="showPage('services')" class="text-purple-600 font-semibold hover:text-purple-700">Learn More →</button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button onclick="showPage('services')" class="cta-button text-white px-8 py-3 rounded-lg font-semibold">
+                        View All Services
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about-page" class="page-content">
+        <section class="py-20 bg-white pt-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-slate-800 mb-4">About Stontech Construction</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Leading the construction industry in Kenya with unwavering commitment to quality, innovation, and customer satisfaction.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-800 mb-6">Our Story</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Founded in 2008, Stontech General Supplies and Construction Limited has grown from a small local contractor to one of Kenya's most trusted construction companies. Our journey began with a simple vision: to deliver exceptional construction services that exceed client expectations while maintaining the highest standards of quality and professionalism.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Over the years, we have successfully completed over 500 projects ranging from residential homes to large commercial complexes, earning the trust of clients across Kenya through our commitment to excellence, innovation, and sustainable building practices.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-purple-600 mb-2">15+</div>
+                                <div class="text-gray-600">Years Experience</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-cyan-600 mb-2">500+</div>
+                                <div class="text-gray-600">Projects Completed</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-purple-600 mb-2">98%</div>
+                                <div class="text-gray-600">Client Satisfaction</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-cyan-600 mb-2">24/7</div>
+                                <div class="text-gray-600">Support Available</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-3">
+                                <i class="fas fa-award text-purple-600 mr-3"></i>
+                                Quality Assurance
+                            </h4>
+                            <p class="text-gray-600">
+                                ISO 9001:2015 certified with rigorous quality control processes ensuring every project meets international standards.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-3">
+                                <i class="fas fa-users text-emerald-600 mr-3"></i>
+                                Expert Team
+                            </h4>
+                            <p class="text-gray-600">
+                                Highly skilled professionals including certified engineers, project managers, and construction specialists.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-3">
+                                <i class="fas fa-handshake text-emerald-600 mr-3"></i>
+                                Client-Focused
+                            </h4>
+                            <p class="text-gray-600">
+                                Dedicated to building lasting relationships through transparent communication and exceptional service delivery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission, Vision, Values -->
+                <div class="grid md:grid-cols-3 gap-8 mb-20">
+                    <div class="text-center p-8 bg-emerald-50 rounded-xl">
+                        <div class="bg-emerald-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-bullseye text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            To provide exceptional construction services and quality supplies that exceed client expectations while maintaining the highest standards of safety, sustainability, and professionalism.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-blue-50 rounded-xl">
+                        <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-eye text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Our Vision</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            To be Kenya's most trusted and innovative construction company, recognized for transforming communities through sustainable building solutions and superior service delivery.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center p-8 bg-purple-50 rounded-xl">
+                        <div class="bg-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-heart text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Our Values</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Integrity, Excellence, Innovation, Sustainability, and Customer Satisfaction guide every decision we make and every project we undertake.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-800 mb-4">Our Leadership Team</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Meet the experienced professionals leading Stontech to new heights of excellence.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-32 h-32 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-user text-4xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">John Kamau</h4>
+                        <p class="text-emerald-600 font-medium mb-3">Managing Director</p>
+                        <p class="text-gray-600 text-sm">15+ years in construction management with expertise in large-scale commercial projects.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-user text-4xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Sarah Wanjiku</h4>
+                        <p class="text-emerald-600 font-medium mb-3">Chief Engineer</p>
+                        <p class="text-gray-600 text-sm">Certified structural engineer with specialization in sustainable construction practices.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-32 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-user text-4xl text-white"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-2">Michael Ochieng</h4>
+                        <p class="text-emerald-600 font-medium mb-3">Operations Manager</p>
+                        <p class="text-gray-600 text-sm">Expert in supply chain management and project coordination with proven delivery record.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="services-page" class="page-content">
+        <section class="py-20 bg-gray-50 pt-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-slate-800 mb-4">Our Comprehensive Services</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        From foundation to finish, we provide complete construction solutions and quality supplies for all your building needs.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-purple-600 mb-6">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Building & Construction</h3>
+                        <p class="text-gray-600 mb-6">
+                            Complete building construction services from residential homes to commercial complexes with modern techniques and quality materials.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Residential Construction</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Commercial Buildings</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Industrial Facilities</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Renovations & Extensions</li>
+                        </ul>
+                        <button onclick="showPage('quote')" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-cyan-600 mb-6">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">General Supplies</h3>
+                        <p class="text-gray-600 mb-6">
+                            Premium quality building materials and construction supplies sourced from trusted manufacturers and delivered on schedule.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Cement & Aggregates</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Steel & Reinforcement</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Finishing Materials</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Hardware & Tools</li>
+                        </ul>
+                        <button onclick="showPage('quote')" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-purple-600 mb-6">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Civil Works</h3>
+                        <p class="text-gray-600 mb-6">
+                            Infrastructure development including roads, drainage systems, and earthworks with advanced machinery and expertise.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Road Construction</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Drainage Systems</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Site Preparation</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Earthworks & Excavation</li>
+                        </ul>
+                        <button onclick="showPage('quote')" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-emerald-600 mb-6">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Electrical Services</h3>
+                        <p class="text-gray-600 mb-6">
+                            Professional electrical installations, maintenance, and repairs by certified electricians following safety standards.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Wiring & Installation</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Power Systems</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Lighting Solutions</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Maintenance & Repair</li>
+                        </ul>
+                        <button onclick="showPage('quote')" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-emerald-600 mb-6">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Mechanical Services</h3>
+                        <p class="text-gray-600 mb-6">
+                            HVAC systems, plumbing, and mechanical installations designed for optimal performance and energy efficiency.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>HVAC Systems</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Plumbing Works</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Equipment Installation</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>System Maintenance</li>
+                        </ul>
+                        <button onclick="showPage('quote')" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                    
+                    <div class="service-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl">
+                        <div class="text-4xl text-emerald-600 mb-6">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Maintenance Services</h3>
+                        <p class="text-gray-600 mb-6">
+                            Comprehensive maintenance solutions to keep your properties in excellent condition with preventive and corrective services.
+                        </p>
+                        <ul class="text-sm text-gray-600 space-y-2 mb-6">
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Preventive Maintenance</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Emergency Repairs</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>Facility Management</li>
+                            <li><i class="fas fa-check text-emerald-600 mr-2"></i>24/7 Support</li>
+                        </ul>
+                        <button onclick="showPage('quote')" class="w-full bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service Process -->
+                <div class="mt-20">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-slate-800 mb-4">Our Service Process</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            From initial consultation to project completion, we follow a proven process to ensure success.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl font-bold text-emerald-600">1</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-3">Consultation</h4>
+                            <p class="text-gray-600 text-sm">Free initial consultation to understand your requirements and provide expert advice.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl font-bold text-emerald-600">2</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-3">Planning</h4>
+                            <p class="text-gray-600 text-sm">Detailed project planning, design, and cost estimation with transparent pricing.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl font-bold text-emerald-600">3</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-3">Execution</h4>
+                            <p class="text-gray-600 text-sm">Professional execution with regular updates and quality control at every stage.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <span class="text-2xl font-bold text-emerald-600">4</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-800 mb-3">Delivery</h4>
+                            <p class="text-gray-600 text-sm">Timely project completion with comprehensive handover and ongoing support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PROJECTS PAGE -->
+    <div id="projects-page" class="page-content">
+        <section class="py-20 bg-white pt-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-slate-800 mb-4">Our Successful Projects</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Explore our portfolio of completed projects that showcase our expertise and commitment to excellence.
+                    </p>
+                </div>
+                
+                <!-- Project Filter -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button onclick="filterProjects('all')" class="filter-btn bg-emerald-600 text-white px-6 py-2 rounded-full font-medium">All Projects</button>
+                    <button onclick="filterProjects('construction')" class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-emerald-600 hover:text-white">Construction</button>
+                    <button onclick="filterProjects('supplies')" class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-emerald-600 hover:text-white">Supplies</button>
+                    <button onclick="filterProjects('civil')" class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-emerald-600 hover:text-white">Civil Works</button>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                    <div class="project-card construction bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                        <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                            <i class="fas fa-building text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Westlands Office Complex</h3>
+                            <p class="text-gray-600 mb-4">Modern 8-story commercial building with state-of-the-art facilities and sustainable design features.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-emerald-600 font-medium">Commercial Construction</span>
+                                <span class="text-sm text-gray-500">Completed 2023</span>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 italic">"Exceptional quality and timely delivery. Stontech exceeded our expectations." - Client Testimonial</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-emerald-600">KSh 45M</span>
+                                <span class="text-sm text-gray-500">18 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card supplies bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                        <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                            <i class="fas fa-truck text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Residential Estate Supply</h3>
+                            <p class="text-gray-600 mb-4">Complete material supply for 50-unit residential development including cement, steel, and finishing materials.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-emerald-600 font-medium">General Supplies</span>
+                                <span class="text-sm text-gray-500">Completed 2023</span>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 italic">"Reliable supply chain and competitive pricing. Highly recommended." - Developer Review</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-emerald-600">KSh 12M</span>
+                                <span class="text-sm text-gray-500">6 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card civil bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                        <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                            <i class="fas fa-road text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Kiambu County Roads</h3>
+                            <p class="text-gray-600 mb-4">15km road construction and drainage system installation improving rural connectivity and infrastructure.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-emerald-600 font-medium">Civil Works</span>
+                                <span class="text-sm text-gray-500">Completed 2022</span>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 italic">"Professional execution and community-focused approach." - County Government</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-emerald-600">KSh 85M</span>
+                                <span class="text-sm text-gray-500">24 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card construction bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                        <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                            <i class="fas fa-home text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Luxury Villa Karen</h3>
+                            <p class="text-gray-600 mb-4">High-end residential construction with premium finishes, smart home technology, and landscaping.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-emerald-600 font-medium">Residential Construction</span>
+                                <span class="text-sm text-gray-500">Completed 2023</span>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 italic">"Attention to detail and craftsmanship is outstanding." - Homeowner</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-emerald-600">KSh 25M</span>
+                                <span class="text-sm text-gray-500">12 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card supplies bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                        <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                            <i class="fas fa-industry text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Industrial Warehouse Supply</h3>
+                            <p class="text-gray-600 mb-4">Specialized materials supply for large-scale warehouse construction including structural steel and roofing.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-emerald-600 font-medium">Industrial Supplies</span>
+                                <span class="text-sm text-gray-500">Completed 2022</span>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 italic">"Efficient logistics and quality materials delivered on schedule." - Project Manager</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-emerald-600">KSh 18M</span>
+                                <span class="text-sm text-gray-500">8 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card civil bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                        <div class="h-48 bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                            <i class="fas fa-water text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Water Treatment Plant</h3>
+                            <p class="text-gray-600 mb-4">Civil works for water treatment facility including excavation, concrete works, and infrastructure development.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm text-emerald-600 font-medium">Infrastructure</span>
+                                <span class="text-sm text-gray-500">Completed 2023</span>
+                            </div>
+                            <div class="p-3 bg-gray-50 rounded-lg mb-4">
+                                <p class="text-sm text-gray-600 italic">"Critical infrastructure delivered with precision and care." - Water Authority</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-emerald-600">KSh 120M</span>
+                                <span class="text-sm text-gray-500">30 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-16">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Ready to Start Your Project?</h3>
+                    <p class="text-gray-600 mb-8">Join our satisfied clients and experience the Stontech difference.</p>
+                    <button onclick="showPage('quote')" class="cta-button text-white px-8 py-3 rounded-lg font-semibold mr-4">
+                        Request Quote
+                    </button>
+                    <button onclick="showPage('contact')" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition-colors">
+                        Contact Us
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- QUOTE PAGE -->
+    <div id="quote-page" class="page-content">
+        <section class="py-20 bg-emerald-600 pt-32">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold text-white mb-4">Get Your Free Estimate Today</h1>
+                    <p class="text-xl text-emerald-100">
+                        Ready to start your project? Request a free consultation and detailed quote from our experts.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <form id="quote-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Enter your full name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="+254 700 000 000">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="your.email@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Service Type *</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                    <option value="">Select a service</option>
+                                    <option value="construction">Building & Construction</option>
+                                    <option value="supplies">General Supplies</option>
+                                    <option value="civil">Civil Works</option>
+                                    <option value="electrical">Electrical Services</option>
+                                    <option value="mechanical">Mechanical Services</option>
+                                    <option value="maintenance">Maintenance Services</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Project Location</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="City, County">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Budget Range</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-1m">Under KSh 1M</option>
+                                    <option value="1m-5m">KSh 1M - 5M</option>
+                                    <option value="5m-10m">KSh 5M - 10M</option>
+                                    <option value="10m-50m">KSh 10M - 50M</option>
+                                    <option value="over-50m">Over KSh 50M</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Project Details *</label>
+                            <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Please describe your project requirements, timeline, and any specific needs..."></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Contact Method</label>
+                            <div class="flex space-x-6">
+                                <label class="flex items-center">
+                                    <input type="radio" name="contact_method" value="phone" class="mr-2">
+                                    <span class="text-gray-700">Phone Call</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="contact_method" value="email" class="mr-2">
+                                    <span class="text-gray-700">Email</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="contact_method" value="whatsapp" class="mr-2">
+                                    <span class="text-gray-700">WhatsApp</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="cta-button text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Submit Quote Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Why Choose Us for Quotes -->
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                    <div class="text-center text-white">
+                        <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Quick Response</h4>
+                        <p class="text-emerald-100">Get your detailed quote within 24 hours</p>
+                    </div>
+                    
+                    <div class="text-center text-white">
+                        <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calculator text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Accurate Pricing</h4>
+                        <p class="text-emerald-100">Transparent and competitive pricing with no hidden costs</p>
+                    </div>
+                    
+                    <div class="text-center text-white">
+                        <div class="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold mb-2">Free Consultation</h4>
+                        <p class="text-emerald-100">Expert advice and consultation at no cost</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- BLOG PAGE -->
+    <div id="blog-page" class="page-content">
+        <section class="py-20 bg-gray-50 pt-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-slate-800 mb-4">Industry Insights & Updates</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Stay informed with the latest construction trends, tips, and industry news from our experts.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                            <i class="fas fa-hammer text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-emerald-600 font-medium mb-2">Construction Tips</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Essential Building Materials for Kenya's Climate</h3>
+                            <p class="text-gray-600 mb-4">Discover the best construction materials suited for Kenya's diverse climate conditions and how to ensure durability in different weather patterns. Learn about moisture-resistant options and sustainable choices.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dec 15, 2023</span>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                            <i class="fas fa-leaf text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-emerald-600 font-medium mb-2">Sustainability</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Sustainable Construction Practices in 2024</h3>
+                            <p class="text-gray-600 mb-4">Learn about eco-friendly building techniques and materials that reduce environmental impact while maintaining quality. Explore green building certifications and energy-efficient solutions.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dec 10, 2023</span>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-emerald-600 font-medium mb-2">Market Trends</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Kenya's Construction Market Outlook 2024</h3>
+                            <p class="text-gray-600 mb-4">Analysis of current market trends, opportunities, and challenges in Kenya's construction and supply chain industry. Insights into government infrastructure projects and private sector growth.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Dec 5, 2023</span>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                            <i class="fas fa-hard-hat text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-emerald-600 font-medium mb-2">Safety</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Construction Safety Standards and Best Practices</h3>
+                            <p class="text-gray-600 mb-4">Essential safety protocols and regulations for construction sites in Kenya. Learn about protective equipment, risk assessment, and creating a safety-first culture in construction projects.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Nov 28, 2023</span>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center">
+                            <i class="fas fa-coins text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-emerald-600 font-medium mb-2">Cost Management</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">How to Budget for Your Construction Project</h3>
+                            <p class="text-gray-600 mb-4">Comprehensive guide to construction budgeting including cost estimation, contingency planning, and avoiding common financial pitfalls in building projects.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Nov 20, 2023</span>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-6xl text-white"></i>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-sm text-emerald-600 font-medium mb-2">Technology</div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Digital Tools Transforming Construction</h3>
+                            <p class="text-gray-600 mb-4">Explore how technology is revolutionizing the construction industry with project management software, BIM modeling, and digital collaboration tools improving efficiency and quality.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-500">Nov 15, 2023</span>
+                                <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Newsletter Signup -->
+                <div class="mt-16 bg-emerald-600 rounded-2xl p-8 text-center">
+                    <h3 class="text-2xl font-bold text-white mb-4">Stay Updated</h3>
+                    <p class="text-emerald-100 mb-6">Subscribe to our newsletter for the latest construction insights and company updates.</p>
+                    <div class="max-w-md mx-auto flex gap-4">
+                        <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg focus:ring-2 focus:ring-white focus:outline-none">
+                        <button class="bg-white text-emerald-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-page" class="page-content">
+        <section class="py-20 bg-white pt-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-bold text-slate-800 mb-4">Get In Touch</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Ready to discuss your project? Contact us today for professional consultation and competitive pricing.
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <div class="space-y-8">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 p-3 rounded-lg">
+                                    <i class="fas fa-map-marker-alt text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-800 mb-2">Office Location</h3>
+                                    <p class="text-gray-600">
+                                        Stontech Plaza, 3rd Floor<br>
+                                        Kimathi Street, Nairobi CBD<br>
+                                        P.O. Box 12345-00100, Nairobi
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 p-3 rounded-lg">
+                                    <i class="fas fa-phone text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-800 mb-2">Phone Numbers</h3>
+                                    <p class="text-gray-600">
+                                        Main Office: +254 700 123 456<br>
+                                        Emergency: +254 711 987 654<br>
+                                        Supplies: +254 722 345 678
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 p-3 rounded-lg">
+                                    <i class="fas fa-envelope text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-800 mb-2">Email Addresses</h3>
+                                    <p class="text-gray-600">
+                                        General: info@stontech.co.ke<br>
+                                        Projects: projects@stontech.co.ke<br>
+                                        Supplies: supplies@stontech.co.ke
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-100 p-3 rounded-lg">
+                                    <i class="fas fa-clock text-emerald-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold text-slate-800 mb-2">Business Hours</h3>
+                                    <p class="text-gray-600">
+                                        Monday - Friday: 8:00 AM - 6:00 PM<br>
+                                        Saturday: 9:00 AM - 4:00 PM<br>
+                                        Sunday: Emergency calls only
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-blue-400 text-white p-3 rounded-lg hover:bg-blue-500 transition-colors">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-blue-700 text-white p-3 rounded-lg hover:bg-blue-800 transition-colors">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Send Us a Message</h3>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                    <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                                    <option value="">Select a subject</option>
+                                    <option value="quote">Request Quote</option>
+                                    <option value="consultation">Free Consultation</option>
+                                    <option value="partnership">Partnership Inquiry</option>
+                                    <option value="support">Customer Support</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea required rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Tell us about your project or inquiry..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full cta-button text-white py-3 rounded-lg font-semibold">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Google Maps Placeholder -->
+                <div class="mt-16">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Find Our Office</h3>
+                    <div class="bg-gray-200 h-96 rounded-2xl flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-6xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-600 text-lg">Interactive Google Maps</p>
+                            <p class="text-gray-500">Stontech Plaza, Kimathi Street, Nairobi CBD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">
+                        <span class="text-emerald-400">Stontech</span> Construction
+                    </h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Kenya's premier construction and general supplies company delivering excellence in every project with over 15 years of proven expertise.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-emerald-600 p-2 rounded hover:bg-emerald-700 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-emerald-600 p-2 rounded hover:bg-emerald-700 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-emerald-600 p-2 rounded hover:bg-emerald-700 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-emerald-600 p-2 rounded hover:bg-emerald-700 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-emerald-400 transition-colors">Building & Construction</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-emerald-400 transition-colors">General Supplies</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-emerald-400 transition-colors">Civil Works</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-emerald-400 transition-colors">Electrical Services</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-emerald-400 transition-colors">Mechanical Services</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-emerald-400 transition-colors">Maintenance Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" onclick="showPage('about')" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+                        <li><a href="#" onclick="showPage('projects')" class="hover:text-emerald-400 transition-colors">Our Projects</a></li>
+                        <li><a href="#" onclick="showPage('quote')" class="hover:text-emerald-400 transition-colors">Request Quote</a></li>
+                        <li><a href="#" onclick="showPage('blog')" class="hover:text-emerald-400 transition-colors">Blog & News</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="hover:text-emerald-400 transition-colors">Contact Us</a></li>
+                        <li><a href="#" onclick="downloadBrochure()" class="hover:text-emerald-400 transition-colors">Download Brochure</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact Info</h4>
+                    <div class="space-y-4 text-gray-300">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-emerald-400 mt-1"></i>
+                            <div>
+                                <p>Stontech Plaza, 3rd Floor</p>
+                                <p>Kimathi Street, Nairobi CBD</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-emerald-400"></i>
+                            <p>+254 700 123 456</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-emerald-400"></i>
+                            <p>info@stontech.co.ke</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2023 Stontech General Supplies and Construction Limited. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-emerald-400 text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-emerald-400 text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-emerald-400 text-sm transition-colors">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/254700123456" target="_blank" rel="noopener noreferrer" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <div class="chat-widget">
+        <button onclick="toggleChat()" class="bg-emerald-600 text-white p-4 rounded-full shadow-lg hover:bg-emerald-700 transition-all">
+            <i class="fas fa-comments text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Chat Widget (Hidden by default) -->
+    <div id="chat-popup" class="fixed bottom-20 right-20 w-80 bg-white rounded-lg shadow-2xl border hidden z-50">
+        <div class="bg-emerald-600 text-white p-4 rounded-t-lg">
+            <div class="flex justify-between items-center">
+                <h4 class="font-semibold">Live Support</h4>
+                <button onclick="toggleChat()" class="text-white hover:text-gray-200">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="p-4">
+            <div class="mb-4">
+                <div class="bg-gray-100 p-3 rounded-lg mb-2">
+                    <p class="text-sm text-gray-700">Hello! How can we help you with your construction project today?</p>
+                </div>
+            </div>
+            <div class="flex space-x-2">
+                <input type="text" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500">
+                <button class="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page navigation system
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update navigation active state
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Find and activate the corresponding nav link
+            const activeNavLink = document.querySelector(`[onclick="showPage('${pageId}')"]`);
+            if (activeNavLink) {
+                activeNavLink.classList.add('active');
+            }
+            
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Project filtering
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-card');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            // Update button styles
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-emerald-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.classList.add('bg-emerald-600', 'text-white');
+            
+            // Filter projects
+            projects.forEach(project => {
+                if (category === 'all' || project.classList.contains(category)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+
+        // Chat widget toggle
+        function toggleChat() {
+            const chatPopup = document.getElementById('chat-popup');
+            chatPopup.classList.toggle('hidden');
+        }
+
+        // Form submissions
+        document.getElementById('quote-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your quote request! Our team will contact you within 24 hours to discuss your project requirements.');
+            this.reset();
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you as soon as possible.');
+            this.reset();
+        });
+
+        // Download brochure functionality
+        function downloadBrochure() {
+            const content = `
+STONTECH GENERAL SUPPLIES AND CONSTRUCTION LIMITED
+Company Profile & Services Brochure
+
+ABOUT US
+Leading construction and general supplies company in Kenya with over 15 years of experience.
+
+OUR SERVICES
+• Building & Construction
+• General Supplies
+• Civil Works
+• Electrical Services
+• Mechanical Services
+• Maintenance Services
+
+CONTACT INFORMATION
+Phone: +254 700 123 456
+Email: info@stontech.co.ke
+Address: Stontech Plaza, 3rd Floor, Kimathi Street, Nairobi CBD
+
+Visit our website for more information and to request a quote.
+            `;
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Stontech-Company-Profile.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show home page by default
+            showPage('home');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98455a34347765ea',t:'MTc1ODc0OTEwNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
